@@ -8,12 +8,12 @@ from selenium.webdriver.firefox.options import Options
 from telegram import Bot, error
 
 # Настройка Telegram Bot
-TELEGRAM_TOKEN = "7537676839:AAE3zmuL6ZWnZuNB43c4S8CqEkthOlWvALs"
+TELEGRAM_TOKEN = "тут_токен_из_BotFather"
 bot = Bot(token=TELEGRAM_TOKEN)
 
 # Список капперов и их телеграм-каналов
 capper_channels = {
-    "https://oskarok.blogabet.com/": "-1002358772434",
+    "https://oskarok.blogabet.com/": "тут_id_telegram_канала",
     # Добавляйте других капперов и их каналы здесь
     # 1 - страница каппера, 2 - id канала/чата, куда отправляем прогнозы
 }
@@ -34,8 +34,8 @@ def login_to_blogabet():
     time.sleep(2)
 
     # Тут данные от аккаунта blogabet.com // для проверки HTML кода
-    driver.find_element("id", "email").send_keys("jasterelafis777@gmail.com")
-    driver.find_element("id", "password").send_keys("Oz098a2HLp")
+    driver.find_element("id", "email").send_keys("тут_email")
+    driver.find_element("id", "password").send_keys("тут_пароль")
     driver.find_element("xpath", "//button[@type='submit']").click()
 
     time.sleep(5)
@@ -104,7 +104,7 @@ async def get_latest_pick_and_send():
             # Асинхронная отправка сообщения с повторной попыткой
             await send_message_with_retry(chat_id, message)
 
-        # Ждем 30 сек перед следующей проверкой
+        # Ждем 30 сек перед следующей проверкой / Можно заменить на свое число
         await asyncio.sleep(30)
 
 # Основная функция для выполнения всего скрипта
