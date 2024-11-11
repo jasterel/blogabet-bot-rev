@@ -19,7 +19,7 @@
   echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
   
 - **Установите Docker:**
-  sudo apt-get update
+  sudo apt-get update \n
   sudo apt-get install -y docker-ce
   
 - **Проверьте, что Docker установлен:**
